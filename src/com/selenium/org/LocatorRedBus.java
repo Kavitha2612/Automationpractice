@@ -17,7 +17,8 @@ public class LocatorRedBus {
 		from.sendKeys("chennai");
 
 		WebElement to = driver.findElement(By.id("dest"));
-		to.sendKeys("coimbatore");				
+		to.sendKeys("coimbatore");	
+		
 	
 	}
 

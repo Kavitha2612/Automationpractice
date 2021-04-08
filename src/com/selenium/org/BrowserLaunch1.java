@@ -11,9 +11,13 @@ import org.openqa.selenium.support.ui.Select;
 public class BrowserLaunch1 {
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Admin\\eclipse-workspace\\Selenium\\driver\\chromedriver.exe");
+//		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Admin\\eclipse-workspace\\Selenium\\driver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\driver\\chromedriver.exe");				
+
 		WebDriver driver = new ChromeDriver();
+	
 		driver.get("https://www.facebook.com/");
+		
 		driver.manage().window().maximize();
 		
 		WebElement email = driver.findElement(By.xpath("//input[@id='email']"));
@@ -32,12 +36,13 @@ public class BrowserLaunch1 {
         create_btn.click();
         
         WebElement day = driver.findElement(By.id("day"));
+        System.out.println(day);
         		
         Select s =new Select(day);
         s.selectByValue("8");
         List<WebElement> options = s.getOptions();	
 	    for (WebElement X : options) {
-	    	System.out.println(X.getText());
+	    	System.out.println(X.getText()); 
 			
 		}
 	}
